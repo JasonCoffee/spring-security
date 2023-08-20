@@ -15,9 +15,8 @@
 - 토큰은 하나의 문자열 값. X-CSRF-TOKEN=46e2b00...
 
 - CsrfFilter는 CsrfTokenRepository 구성 요소를 이용해 토큰 생성, 토큰 저장, 토큰 검증에 필요한 CSRF 토큰 값을 관리한다.
-- CsrfTokenRepository는 토큰을 HTTP 세션에 저장하고 랜덤 UUID로 토큰을 생성한다.
-- CsrfFilter는 생성된 CSRF 토큰을 HTTP 요청의 _csrf 특성에 추가한다. (HttpSessionCsrfTokenRepository)
-- 기본 구현은 HTTP 세션을 이용해 서버 쪽에 토큰값을 저장.
+- CsrfTokenRepository 기본 구현은 토큰을 HTTP 세션에 저장하고 랜덤 UUID로 토큰을 생성한다. (HttpSessionCsrfTokenRepository)
+- CsrfFilter는 생성된 CSRF 토큰을 HTTP 요청의 _csrf 특성에 추가한다.
 
 ```
 curl -v http://localhost:8080/hello
