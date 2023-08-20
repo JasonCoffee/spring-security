@@ -32,11 +32,9 @@ curl -X POST http://localhost:8080/hello
 - HTTP 세션이 아닌 데이터베이스에 토큰을 관리 → 아래 구현
 1. CsrfToken (DefaultCsrfToken)
 2. CsrfTokenRepository (CustomCsrfTokenRepository)
-﹣generateToken
-﹣saveToken
-﹣loadToken
-
-![image](https://github.com/JasonCoffee/spring-security/assets/140817725/bfe2e421-d0bb-4b1e-aa11-8b44a8650f39)
+	- generateToken
+	- saveToken
+	- loadToken
 
 ``` java
 public class CustomCsrfTokenRepository implements CsrfTokenRepository {
@@ -51,8 +49,7 @@ public class CustomCsrfTokenRepository implements CsrfTokenRepository {
 	}
 
 	@Override
-	public void saveToken(CsrfToken csrfToken, HttpServletRequest httpServletRequest,
-		HttpServletResponse httpServletResponse) {
+	public void saveToken(CsrfToken csrfToken, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		String identifier = httpServletRequest.getHeader("X-IDENTIFIER");
 		Optional<Token> existingToken = jpaTokenRepository.findTokenByIdentifier(identifier);
 
@@ -81,6 +78,8 @@ public class CustomCsrfTokenRepository implements CsrfTokenRepository {
 	}
 }
 ```
+
+![image](https://github.com/JasonCoffee/spring-security/assets/140817725/bfe2e421-d0bb-4b1e-aa11-8b44a8650f39)
 
 ---
 ## CORS: Cross-Origin Resource Sharing
@@ -124,7 +123,7 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
 			c -> {
 				CorsConfigurationSource source = request -> {
 					CorsConfiguration config = new CorsConfiguration();
-					config.setAllowedOrigins(List.of("example.com", "example.org));
+					config.setAllowedOrigins(List.of("example.com", "example.org"));
 					config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
 					return config;
 				};
