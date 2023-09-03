@@ -18,7 +18,8 @@
 #### 승인 코드 그랜트
 - 사용자가 직접 권한 부여 서버에서 인증하여 클라이언트가 액세스 토큰을 얻는 방법
 <img width="923" alt="image" src="https://github.com/JasonCoffee/spring-security/assets/140817725/b056694c-917c-46cd-9eb7-40ef9fa15964">
-클라이언트가 권한 부여 서버로 사용자를 리디렉션할 때 주는 정보 1
+
+##### 클라이언트가 권한 부여 서버로 사용자를 리디렉션할 때 주는 정보 1
 - response type
 - client_id
 - redirect_uri
@@ -26,7 +27,7 @@
 - state
 
 * 권한 부여 서버가 클라이언트에게 바로 액세스 토큰을 반환하는 암시적 그랜트 유형(implicit grant type)은 권장되지 않음.
-클라이언트가 권한 부여 서버에 제공하는 정보 2
+##### 클라이언트가 권한 부여 서버에 제공하는 정보 2
 - code
 - client_id, client_secret
 - redirect_uri
