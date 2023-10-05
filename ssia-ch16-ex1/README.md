@@ -160,5 +160,5 @@ public class DocumentsPermissionEvaluator implements PermissionEvaluator {
 
 ### @EnableGlobalMethodSecurity
 - prePostEnabled → @PreAuthorize 및 @PostAuthorize 어노테이션 활성화
-- jsr250Enabled → @RolesAllowd 어노테이션 활성화
+- jsr250Enabled → @RolesAllowed 어노테이션 활성화
 - securedEnabled → @Secured 어노테이션 활성화
